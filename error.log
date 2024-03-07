@@ -1,29 +1,27 @@
 error:
-       … while evaluating the attribute 'config.system.build.toplevel'
+       … while evaluating the attribute 'value'
 
-         at /nix/store/vliszjjblpf6782411ddcvziay2d7fm6-source/lib/modules.nix:320:9:
+         at /nix/store/vliszjjblpf6782411ddcvziay2d7fm6-source/lib/modules.nix:807:9:
 
-          319|         options = checked options;
-          320|         config = checked (removeAttrs config [ "_module" ]);
+          806|     in warnDeprecation opt //
+          807|       { value = builtins.addErrorContext "while evaluating the option `${showOption loc}':" value;
              |         ^
-          321|         _module = checked (config._module);
+          808|         inherit (res.defsFinal') highestPrio;
 
-       … while calling the 'seq' builtin
+       … while calling the 'addErrorContext' builtin
 
-         at /nix/store/vliszjjblpf6782411ddcvziay2d7fm6-source/lib/modules.nix:320:18:
+         at /nix/store/vliszjjblpf6782411ddcvziay2d7fm6-source/lib/modules.nix:807:17:
 
-          319|         options = checked options;
-          320|         config = checked (removeAttrs config [ "_module" ]);
-             |                  ^
-          321|         _module = checked (config._module);
+          806|     in warnDeprecation opt //
+          807|       { value = builtins.addErrorContext "while evaluating the option `${showOption loc}':" value;
+             |                 ^
+          808|         inherit (res.defsFinal') highestPrio;
 
        (stack trace truncated; use '--show-trace' to show the full trace)
 
-       error: The option `home' does not exist. Definition values:
-       - In `/nix/store/q89kclisc7p3rfsq4blaggbapb4fhmvb-source/hosts/mbp04':
-           {
-             packages = [
-               <derivation rnix-lsp-unstable-2022-11-27>
-               <derivation nixpkgs-fmt-1.3.0>
-               <derivation du-dust-0.8.6>
-           ...
+       error: A definition for option `home-manager.users.zoranzaric' is not of type `Home Manager module'. Definition values:
+       - In `<unknown-file>':
+           [
+             /nix/store/b76k0pflbhrf71jd5g4mbvz1h47p5jyp-source/modules/home
+             /nix/store/b76k0pflbhrf71jd5g4mbvz1h47p5jyp-source/home/zoranzaric
+           ]

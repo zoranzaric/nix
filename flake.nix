@@ -58,6 +58,19 @@
           modules = [
             ./modules/darwin
             ./hosts/mbp04
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.zoranzaric = [
+                ./modules/home
+                ./home/zoranzaric
+              ];
+
+              # Optionally, use home-manager.extraSpecialArgs to pass
+              # arguments to home.nix
+            }
+
           ];
         };
       };
