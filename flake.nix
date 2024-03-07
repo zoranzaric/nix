@@ -62,15 +62,15 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.zoranzaric = [
-                ./modules/home
-                ./home/zoranzaric
-              ];
-
+              home-manager.users.zoranzaric = {
+                imports = [
+                  ./modules/home
+                  ./home/zoranzaric
+                ];
+              };
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
             }
-
           ];
         };
       };
