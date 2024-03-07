@@ -1,0 +1,29 @@
+error:
+       … while evaluating the attribute 'config.system.build.toplevel'
+
+         at /nix/store/vliszjjblpf6782411ddcvziay2d7fm6-source/lib/modules.nix:320:9:
+
+          319|         options = checked options;
+          320|         config = checked (removeAttrs config [ "_module" ]);
+             |         ^
+          321|         _module = checked (config._module);
+
+       … while calling the 'seq' builtin
+
+         at /nix/store/vliszjjblpf6782411ddcvziay2d7fm6-source/lib/modules.nix:320:18:
+
+          319|         options = checked options;
+          320|         config = checked (removeAttrs config [ "_module" ]);
+             |                  ^
+          321|         _module = checked (config._module);
+
+       (stack trace truncated; use '--show-trace' to show the full trace)
+
+       error: The option `home' does not exist. Definition values:
+       - In `/nix/store/q89kclisc7p3rfsq4blaggbapb4fhmvb-source/hosts/mbp04':
+           {
+             packages = [
+               <derivation rnix-lsp-unstable-2022-11-27>
+               <derivation nixpkgs-fmt-1.3.0>
+               <derivation du-dust-0.8.6>
+           ...
