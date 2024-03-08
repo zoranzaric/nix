@@ -25,7 +25,9 @@
       finder._FXShowPosixPathInTitle = true;
       NSGlobalDomain.AppleShowAllExtensions = true;
 
-      NSGlobalDomain.InitialKeyRepeat = 25; # default: 25
+      # 120, 94, 68, 35, 25, 15
+      NSGlobalDomain.InitialKeyRepeat = 94;
+      # 120, 90, 60, 30, 12, 6, 2
       NSGlobalDomain.KeyRepeat = 6; # default: 6
 
       dock = {

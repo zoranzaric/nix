@@ -11,7 +11,6 @@ darwin-rebuild-switch:
   result/sw/bin/darwin-rebuild switch --flake .#$(hostname -s)
   git commit --all --allow-empty --message "$(nix-env --list-generations | grep current)"
 
-
 home-manager-switch:
   nix run github:nix-community/home-manager -- switch --flake .
 
