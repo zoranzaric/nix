@@ -20,17 +20,33 @@
 
   # here go the darwin preferences and config items
   system = {
-    keyboard.enableKeyMapping = true;
-    keyboard.remapCapsLockToEscape = true;
     defaults = {
       finder.AppleShowAllExtensions = true;
       finder._FXShowPosixPathInTitle = true;
-      dock.autohide = true;
       NSGlobalDomain.AppleShowAllExtensions = true;
-      NSGlobalDomain.InitialKeyRepeat = 14;
-      NSGlobalDomain.KeyRepeat = 1;
+
+      NSGlobalDomain.InitialKeyRepeat = 25; # default: 25
+      NSGlobalDomain.KeyRepeat = 6; # default: 6
+
+      dock = {
+        autohide = true;
+        orientation = "left";
+      };
+
+      trackpad = {
+        Clicking = true;
+        TrackpadRightClick = true;
+      };
     };
+
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToEscape = true;
+    };
+
   };
+
+  security.pam.enableSudoTouchIdAuth = true;
 
   # homebrew = {
   #   enable = true;
