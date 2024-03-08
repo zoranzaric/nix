@@ -26,7 +26,7 @@
       NSGlobalDomain.AppleShowAllExtensions = true;
 
       # 120, 94, 68, 35, 25, 15
-      NSGlobalDomain.InitialKeyRepeat = 94;
+      NSGlobalDomain.InitialKeyRepeat = 25; # default: 25
       # 120, 90, 60, 30, 12, 6, 2
       NSGlobalDomain.KeyRepeat = 6; # default: 6
 
