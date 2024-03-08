@@ -56,7 +56,7 @@
         "mbp04" = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
-            ./modules/darwin
+            ./darwin-common.nix
             ./hosts/mbp04
             home-manager.darwinModules.home-manager
             {
@@ -64,7 +64,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.zoranzaric = {
                 imports = [
-                  ./modules/home
+                  ./home-common.nix
                   ./home/zoranzaric
                 ];
               };
@@ -79,7 +79,7 @@
         "zoranzaric" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;
           modules = [
-            ./modules/home
+            ./home-common.nix
             ./home/zoranzaric
           ];
         };
