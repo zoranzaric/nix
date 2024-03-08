@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home = {
     username = "zoranzaric";
-    homeDirectory = "/Users/zoranzaric";
+    homeDirectory = lib.mkForce "/Users/zoranzaric";
   };
 }
