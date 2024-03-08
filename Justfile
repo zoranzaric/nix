@@ -9,7 +9,7 @@ alias drs := darwin-rebuild-switch
 darwin-rebuild-switch:
   nix build .#darwinConfigurations.$(hostname -s).system --extra-experimental-features nix-command --extra-experimental-features flakes
   result/sw/bin/darwin-rebuild switch --flake .#$(hostname -s)
-  git commit -am "$(nix-env --list-generations | grep current)"
+  git commit --all --allow-empty --message "$(nix-env --list-generations | grep current)"
 
 
 home-manager-switch:
