@@ -1,27 +1,19 @@
-error:
-       … while evaluating the attribute 'value'
+… while calling the 'head' builtin
 
-         at /nix/store/vliszjjblpf6782411ddcvziay2d7fm6-source/lib/modules.nix:807:9:
+  at /nix/store/vliszjjblpf6782411ddcvziay2d7fm6-source/lib/attrsets.nix:850:11:
 
-          806|     in warnDeprecation opt //
-          807|       { value = builtins.addErrorContext "while evaluating the option `${showOption loc}':" value;
-             |         ^
-          808|         inherit (res.defsFinal') highestPrio;
+   849|         || pred here (elemAt values 1) (head values) then
+   850|           head values
+      |           ^
+   851|         else
 
-       … while calling the 'addErrorContext' builtin
+(stack trace truncated; use '--show-trace' to show the full trace)
 
-         at /nix/store/vliszjjblpf6782411ddcvziay2d7fm6-source/lib/modules.nix:807:17:
-
-          806|     in warnDeprecation opt //
-          807|       { value = builtins.addErrorContext "while evaluating the option `${showOption loc}':" value;
-             |                 ^
-          808|         inherit (res.defsFinal') highestPrio;
-
-       (stack trace truncated; use '--show-trace' to show the full trace)
-
-       error: A definition for option `home-manager.users.zoranzaric' is not of type `Home Manager module'. Definition values:
-       - In `<unknown-file>':
-           [
-             /nix/store/b76k0pflbhrf71jd5g4mbvz1h47p5jyp-source/modules/home
-             /nix/store/b76k0pflbhrf71jd5g4mbvz1h47p5jyp-source/home/zoranzaric
-           ]
+error: The option `networking.wireguard.interfaces.wg0.peers."[definition 1-entry 1]".value' does not exist. Definition values:
+- In `/nix/store/x48r55x9skbsvzzkykc8aricc07zy7ry-source/hosts/node02.zaric.eu/wireguard.nix':
+    {
+      allowedIPs = [
+        "192.168.27.113/32"
+      ];
+      persistentKeepalive = 25;
+    ...

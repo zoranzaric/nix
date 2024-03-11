@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home = {
     stateVersion = "23.11";
@@ -6,6 +6,7 @@
       rnix-lsp
       nixpkgs-fmt
 
+      colmena
       du-dust
     ];
 

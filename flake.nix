@@ -84,5 +84,33 @@
           ];
         };
       };
+
+      colmena = {
+        meta = {
+          nixpkgs = import nixpkgs {
+            system = "x86_64-linux";
+          };
+
+          nodeNixpkgs = {
+            node02 = import nixpkgs
+              {
+                system = "aarch64-linux";
+              };
+          };
+        };
+
+        node02 = {
+          deployment = {
+            targetHost = "node02.zaric.eu";
+            targetPort = 22;
+            targetUser = "root";
+            buildOnTarget = true;
+          };
+
+          imports = [
+            ./hosts/node02.zaric.eu
+          ];
+        };
+      };
     };
 }
