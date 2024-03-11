@@ -16,21 +16,6 @@ in
         ips = [ "192.168.27.10/24" ];
         listenPort = 51820;
         privateKey = (import ../../secrets.nix).wireguard.wg0."node02.zaric.eu".privateKey;
-        # peers = [
-        #   {
-        #     # node01
-        #     publicKey = "ZuinYrBpC6FQmDYHZOY3T74MJpK7GZ/Ni7sDF5RaPUg=";
-        #     allowedIPs = [ "192.168.27.1/32" ];
-        #     endpoint = "node01.zaric.eu:51820"; # TODO: route to endpoint not automatically configured https://wiki.archlinux.org/index.php/WireGuard#Loop_routing https://discourse.nixos.org/t/solved-minimal-firewall-setup-for-wireguard-client/7577
-        #     persistentKeepalive = 25;
-        #   }
-        #   {
-        #     # nas01
-        #     publicKey = "IXOwdtBGYOEUadX+tJjdoMVF7j+UZjo0M63IASynyRc=";
-        #     allowedIPs = [ "192.168.27.113/32" ];
-        #     persistentKeepalive = 25;
-        #   }
-        # ];
         peers = (import ../../lib/wireguard/wg0/peers.nix).mkPeers {
           nixpkgs = pkgs;
           host = hostName;

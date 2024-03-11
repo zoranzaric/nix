@@ -1,6 +1,6 @@
 {
   mkPeers = { nixpkgs, host, ... }:
-    nixpkgs.lib.attrsToList (nixpkgs.lib.attrsets.filterAttrs (n: v: n != host) {
+    nixpkgs.lib.attrValues (nixpkgs.lib.attrsets.filterAttrs (n: v: n != host) {
       node01 = {
         publicKey = "ZuinYrBpC6FQmDYHZOY3T74MJpK7GZ/Ni7sDF5RaPUg=";
         allowedIPs = [ "192.168.27.1/32" ];
